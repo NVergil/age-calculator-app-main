@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+
+  /* ### Neutral */
+
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+
+  /* ## Typography */
+  /* (inputs) */
+  --size: 32px;
+
+  /* ### Font */
+  /* - Weights: 400i, 700, 800i */
+  --font-poppins: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  font-family: var(--font-poppins);
+  background: var(--off-white);
+}
+
+.container {
+  max-width: 841px;
+  padding: 3.5rem;
+  border-radius: 1.5rem;
+  border-bottom-right-radius: 12rem;
+  width: 100%;
+  background: var(--white);
+  margin: 0 auto;
+}
+
+.date-input {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 2rem;
+}
+
+.date-input div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.date-input label {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--smokey-grey);
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+.date-input input {
+  border: 1px solid var(--light-grey);
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: var(--size);
+  max-width: 160px;
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  padding: 0.7rem 1.4rem;
+}
+
+.date-input input:focus {
+  border: 1px solid var(--purple);
+  caret-color: var(--purple);
+}
+
+input.input-error {
+  border: 1px solid var(--light-red);
+}
+
+label.input-label-error {
+  color: var(--light-red);
+}
+
+.input-error-p {
+  color: var(--light-red);
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+::placeholder {
+  color: var(--smokey-grey);
+  opacity: 0.8;
+}
+
+.border-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 2.875rem;
+  margin-bottom: 2.875rem;
+  border: 1px solid var(--off-white);
+}
+
+.date-button {
+  position: absolute;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  background: var(--purple);
+  cursor: pointer;
+  transition: background 100ms ease-in-out;
+}
+
+.date-button:hover {
+  background: var(--off-black);
+}
+
+.time-lapsed p {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 6.5rem;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.time-lapsed .line-counter {
+  color: var(--purple);
+  letter-spacing: 1rem;
+  margin-right: -6px;
+}
+
+.time-lapsed .counter {
+  color: var(--purple);
+  margin-right: 0.75rem;
+}
+
+.attribution {
+  margin-top: 2rem;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  .container {
+    padding: 3rem 1.5rem;
+    border-bottom-right-radius: 6rem;
+  }
+  .date-input label {
+    font-size: 0.75rem;
+  }
+  .date-input {
+    gap: 1rem;
+  }
+  .date-input input {
+    font-size: 1.3rem;
+    max-width: 90px;
+    width: 100%;
+    padding: 0.6rem 0.875rem;
+  }
+  ::placeholder {
+    font-size: 1.3rem;
+  }
+  .border-button {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    justify-content: center;
+  }
+  .date-button {
+    width: 4rem;
+    height: 4rem;
+  }
+  .date-button img {
+    width: 50%;
+  }
+  .time-lapsed p {
+    font-size: 3.5rem;
+  }
+
+  .input-error-p {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .time-lapsed p {
+    font-size: 3rem;
+  }
+}
